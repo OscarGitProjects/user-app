@@ -11,6 +11,7 @@ const AddUser = (props) => {
   const [error, setError] = useState();
 
   // Handlers
+  // Submit of form
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
@@ -34,14 +35,17 @@ const AddUser = (props) => {
     setAge(0);
   };
 
+  // Change users name
   const onChangeUserNameHandler = (event) => {
     setUserName(event.target.value);
   };
 
+  // Change users age
   const onChangeAgeHandler = (event) => {
     setAge(event.target.value);
   };
 
+  // Resets error
   const clearErrorHandler = () => {
     setError(null);
   };
@@ -65,6 +69,8 @@ const AddUser = (props) => {
             id="username"
             name="username"
             onChange={onChangeUserNameHandler}
+            title="Enter a username"
+            placeholder="Username"
           ></input>
 
           <label htmlFor="age">Age (Years)</label>
@@ -74,6 +80,8 @@ const AddUser = (props) => {
             id="age"
             name="age"
             onChange={onChangeAgeHandler}
+            title="Enter a positive age"
+            placeholder="Age"
           ></input>
 
           <Button type="submit">Add user</Button>

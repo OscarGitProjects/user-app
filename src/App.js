@@ -8,7 +8,8 @@ function App() {
   // useState
   const [users, setUsers] = useState([]);
 
-  // functions
+  // handlers
+  // Add a new user
   const onAddUserHandler = (userName, userAge) => {
     setUsers((prevUsers) => {
       return [
@@ -18,10 +19,18 @@ function App() {
     });
   };
 
+  // Delete user with id
+  const onDeleteItemHandler = (id) => {
+    setUsers((prevUsers) => {
+      const updatedUsers = prevUsers.filter((user) => user.id !== id);
+      return updatedUsers;
+    });
+  };
+
   return (
     <div>
       <AddUser onAddUser={onAddUserHandler} />
-      <UsersList users={users} />
+      <UsersList users={users} onDeleteItem={onDeleteItemHandler} />
     </div>
   );
 }
