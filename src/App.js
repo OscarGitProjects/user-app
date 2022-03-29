@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import AddUser from "./components/Users/AddUser";
 import UsersList from "./components/Users/UsersList";
-import Wrapper from "./components/Helpers/Wrapper";
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -29,10 +28,10 @@ function App() {
   };
 
   return (
-    <Wrapper>
+    <>
       <AddUser onAddUser={onAddUserHandler} />
       <UsersList users={users} onDeleteItem={onDeleteItemHandler} />
-    </Wrapper>
+    </>
   );
 }
 

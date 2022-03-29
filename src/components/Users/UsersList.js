@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "../Card/Card";
-import Wrapper from "../Helpers/Wrapper";
 
 import styles from "./UsersList.module.css";
 
@@ -16,7 +15,7 @@ const UsersList = (props) => {
   if (props.users && props.users.length > 0) hasUsers = true;
 
   return (
-    <Wrapper>
+    <>
       {hasUsers === true && (
         <Card className={styles.users}>
           <ul>
@@ -33,7 +32,7 @@ const UsersList = (props) => {
           </ul>
         </Card>
       )}
-    </Wrapper>
+    </>
   );
 };
 
